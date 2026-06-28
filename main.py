@@ -5,7 +5,7 @@ from matplotlib.widgets import Button
 from PIL import Image
 from datetime import datetime
 
-# --- 1. EXPLORACIÓN Y SELECCIÓN DE ARCHIVOS ---
+# EXPLORACIÓN Y SELECCIÓN DE ARCHIVOS 
 
 def buscador():
     """Busca y lista las imágenes válidas en la carpeta Objetos/"""
@@ -55,7 +55,7 @@ def seleccionar_archivo(lista):
             print("Por favor ingrese un número entero válido.")
 
 
-# --- 2. PROCESAMIENTO MATRICIAL DE IMÁGENES (ALGORITMO DINÁMICO) ---
+# PROCESAMIENTO MATRICIAL DE IMÁGENES (ALGORITMO DINÁMICO)
 
 def segmentar_y_reemplazar(matriz_obj, matriz_fon, tolerancia=45):
     """
@@ -94,7 +94,7 @@ def segmentar_y_reemplazar(matriz_obj, matriz_fon, tolerancia=45):
     return resultado, pixeles_objeto, coordenadas_objeto
 
 
-# --- 3. ACCIONES PARA LOS BOTONES DE LA INTERFAZ ---
+#  ACCIONES PARA LOS BOTONES DE LA INTERFAZ
 
 def accion_original(event):
     ax_imagen.imshow(matriz_original)
@@ -147,7 +147,7 @@ def accion_reporte(event):
         print(f"Error al generar el reporte: {e}")
 
 
-# --- 4. FLUJO PRINCIPAL Y CONTROL DE ERRORES ---
+# FLUJO PRINCIPAL Y CONTROL DE ERRORES
 
 lista_archivos = buscador()
 fondos_disponibles = buscar_fondos()
@@ -190,7 +190,7 @@ if lista_archivos and len(fondos_disponibles) == 2:
         # Variable que almacena el estado visual dinámico de la pantalla
         imagen_actual_en_pantalla = matriz_original
         
-        # --- Configuración de la interfaz gráfica con Matplotlib ---
+        # Configuración de la interfaz gráfica con Matplotlib
         fig, ax_imagen = plt.subplots(figsize=(9, 7))
         plt.subplots_adjust(bottom=0.2) # Deja espacio abajo para que quepan los botones sin tapar la imagen
         
